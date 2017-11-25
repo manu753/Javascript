@@ -1,3 +1,3 @@
 # Javascript
-Javascipt is root of all frontend framework present in the world.
-If we learn js to the root then every framework,library will be very easy to understand.
+Javascipt is very basic and important function programing langauage.
+It is important to get the basics clear to working on any front end framework.
