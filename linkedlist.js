@@ -25,7 +25,7 @@ printlist(list);
 //recursive
 function printlist1(list){
   console.log(list.value);
-  if(list.value){
+  if(list.next){
     printlist1(list.next);
   }
 }
