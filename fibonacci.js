@@ -13,8 +13,15 @@ function Fib(){
     if(this.fibMomo[n]){
       return this.fibMomo[n];
     }
-    else{
+     // for n is positive number
+    if(n >= 0){
      const res = this.printFibValue(n - 1) + this.printFibValue(n - 2)
+     this.fibMomo[n] = res;
+     return res;
+    }
+    // for n is negative number
+    if(n < 0){
+     const res = this.printFibValue(n + 2) - this.printFibValue(n + 1)
      this.fibMomo[n] = res;
      return res;
     }
@@ -25,6 +32,7 @@ function Fib(){
 
 const x = new Fib();
 x.printFibValue(10)
+x.printFibValue(-10)
 console.log(x)
 console.log(x.printFibValue(6));
 
