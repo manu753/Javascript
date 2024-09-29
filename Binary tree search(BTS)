@@ -1,0 +1,45 @@
+// BTS with loops
+
+function binarySearch(arr = 0, target) {
+    let start = 0,
+        end = arr.length - 1;
+    while (start <= end) {
+        let mid = Math.floor((start + end) / 2); //optimising mid  //let mid = st + (end-st)/2;
+        if (target > arr[mid]) {
+            start = mid + 1; // 2nd half
+        } else if (target < arr[mid]) {
+            end = mid - 1; // 1st half
+        } else {
+            console.log(mid, ':', arr[mid]);
+            return mid;
+        }
+    }
+    console.log('-1');
+    return -1;
+}
+
+binarySearch([-1, 0, 3, 5, 9, 12], 0);
+
+binarySearch([-1, 0, 3, 5, 9, 12, 44], 44);
+
+// BTS USING RECURSSIVE
+
+function binarySearch(arr = 0, target, str, ed) {
+    let start = str || 0,
+        end = ed || arr.length - 1;
+    let mid = Math.floor((start + end) / 2);
+    if (start <= end) {
+        if (target > arr[mid]) {
+            start = mid + 1;
+            return binarySearch(arr, target, start, end)
+        } else if (target < arr[mid]) {
+            end = mid - 1; // 1st half
+
+            return binarySearch(arr, target, start, end)
+        } else {
+            return mid;
+        }
+    }
+    console.log('-1');
+    return -1;
+}
